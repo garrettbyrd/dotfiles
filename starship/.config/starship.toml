@@ -1,0 +1,18 @@
+format = """$directory$git_branch\n$character"""
+
+[directory]
+truncation_length = 100
+truncate_to_repo = false
+fish_style_pwd_dir_length = 0
+repo_root_style = "bold cyan"
+before_repo_root_style = "bold blue"
+repo_root_format = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style) "
+style = "bold cyan"
+
+[git_branch]
+format = "[$branch]($style) "
+style = "green"
+
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
