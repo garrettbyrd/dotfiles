@@ -17,7 +17,7 @@ Terminal setup managed with [GNU Stow](https://www.gnu.org/software/stow/).
 ./install.sh
 
 # Clone and symlink configs
-git clone <your-repo> ~/dotfiles
+git clone git@github.com:garrettbyrd/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 stow ghostty starship bash
 
