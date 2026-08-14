@@ -1,0 +1,62 @@
+# lsd - https://github.com/lsd-rs/lsd
+# Full reference: https://github.com/lsd-rs/lsd/blob/master/README.md#configuration
+
+# Use ls-like output (no icons, no colors). We want the pretty version.
+classic: false
+
+# Columns shown in long (-l) view, in order.
+blocks:
+  - permission
+  - user
+  - group
+  - size
+  - date
+  - git
+  - name
+
+color:
+  when: auto
+  theme: default
+
+icons:
+  when: auto
+  theme: fancy
+  separator: " "
+
+# `date`, `locale`, `relative`, or a +strftime format string.
+date: "+%Y-%m-%d %H:%M"
+
+# `default` (4.0 KB), `short` (4.0K), or `bytes`.
+size: default
+
+# `rwx`, `octal`, `attributes`, or `disable`.
+permission: rwx
+
+layout: grid
+display: visible-only
+
+sorting:
+  column: name
+  reverse: false
+  dir-grouping: first
+
+recursion:
+  enabled: false
+  depth: 5
+
+indicators: false
+no-symlink: false
+total-size: false
+header: false
+literal: false
+dereference: false
+hyperlink: never
+symlink-arrow: ⇒
+
+# Nothing hidden by default -- `-a` should show exactly what's on disk.
+ignore-globs: []
+
+# Keep long-view columns from blowing out on hosts with long user/group names.
+truncate-owner:
+  after: 12
+  marker: "…"

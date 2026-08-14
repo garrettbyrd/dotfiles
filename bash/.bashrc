@@ -40,6 +40,15 @@ eval "$(uvx --generate-shell-completion bash)"
 # homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# lsd (after brew shellenv so PATH is populated; falls back to plain ls if absent)
+if command -v lsd &>/dev/null; then
+    alias ls='lsd'
+    alias ll='lsd -l'
+    alias la='lsd -A'
+    alias lla='lsd -lA'
+    alias lt='lsd --tree --depth 2'
+fi
+
 # gcloud
 if [ -f "$HOME/packages/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/packages/google-cloud-sdk/path.bash.inc"; fi
 if [ -f "$HOME/packages/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/packages/google-cloud-sdk/completion.bash.inc"; fi

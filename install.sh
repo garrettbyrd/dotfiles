@@ -63,6 +63,20 @@ else
     curl -sS https://starship.rs/install.sh | sh -s -- -y
 fi
 
+# --- lsd ---
+if command_exists lsd; then
+    info "lsd: already installed ($(lsd --version))"
+else
+    info "Installing lsd..."
+    if [[ "$PM" == "dnf" ]]; then
+        # lsd lives in EPEL on RHEL/Rocky
+        rpm -q epel-release &>/dev/null || sudo dnf install -y epel-release
+        $INSTALL lsd
+    else
+        $INSTALL lsd
+    fi
+fi
+
 # --- uv ---
 if command_exists uv; then
     info "uv: already installed ($(uv --version))"
