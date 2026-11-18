@@ -45,3 +45,8 @@ lt    # tree, 2 levels deep
 theme-day    # Tokyo Night
 theme-night  # Amber (retro phosphor)
 ```
+
+## Icons
+
+Use [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) for
+consistent app icons.
